@@ -1,1 +1,0 @@
-# test_task_SPA_react
