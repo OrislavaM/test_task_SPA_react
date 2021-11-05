@@ -1,8 +1,33 @@
-.dogs_card img {
-    max-width: 100%;
-    height: 200px;
+.dogs_card {
+    width: 90%;
+    height: 362px;
+    border: 2px solid gray;
+    box-shadow: 2px 2px 5px 3px rgb(226, 222, 222);
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding: 5px;
 }
 
-.dogs_card {
-    border: 1px solid navy;
+p {
+    padding: 5px 0;
+}
+
+.dogs_card img {
+    width: 300px;
+    min-height: 230px;
+}
+
+.dogs_name {
+    font-weight: 800;
+    padding: 5px 0;
+}
+
+.dogs_bred,
+.dogs_temperament {
+    font-size: 19px;
+    line-height: 1;
+    text-overflow: ellipsis;
 }

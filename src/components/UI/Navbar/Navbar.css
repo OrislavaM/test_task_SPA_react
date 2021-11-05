@@ -47,3 +47,19 @@ a.active,
 a:hover {
     color: rgb(138, 202, 206);
 }
+
+@media (max-width: 540px) {
+    .navbar_links {
+        grid-template-columns: 1fr;
+        justify-content: space-evenly;
+        align-content: center;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    ul li {
+        margin-right: 30px;
+    }
+}

@@ -6,7 +6,7 @@ function Products() {
     const [cards, setCards] = useState([]);
 
     const getCardRequest = async () => {
-        const url = "https://api.thedogapi.com/v1/breeds?limit=8&page=0";
+        const url = "https://api.thedogapi.com/v1/breeds?limit=8&page=9";
 
         const response = await fetch(url);
         const responseJson = await response.json();
