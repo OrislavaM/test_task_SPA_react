@@ -1,7 +1,7 @@
 import React from "react";
 import "../Card/Card.css";
 
-const CardList = (props) => {
+const Card = (props) => {
     return (
         <>
             {props.cards.map((card) => (
@@ -17,4 +17,4 @@ const CardList = (props) => {
         </>
     );
 };
-export default CardList;
+export default Card;
