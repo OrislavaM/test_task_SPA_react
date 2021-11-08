@@ -1,8 +1,13 @@
 import React from "react";
-import axios from "axios";
+import CardSlider from "../components/CardSlider";
 
 function Home() {
-    return <div>Home is work!</div>;
+    return (
+        <div className="container">
+            <h3>Home Page</h3>
+            <CardSlider />
+        </div>
+    );
 }
 
 export default Home;
