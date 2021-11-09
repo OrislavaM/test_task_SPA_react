@@ -8,7 +8,10 @@
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    padding: 10px;
+}
+
+.dogs_information {
+    padding: 5px 15px;
 }
 
 p {

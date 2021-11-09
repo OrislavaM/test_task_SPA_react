@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import "./Slide.css";
-import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Slide = (props) => {
     const [current, setCurrent] = useState(3);
     const [currentIdx, setCurrentIdx] = useState(0);
     const length = props.cards.length;
-
-    console.log(current);
-    console.log(length);
 
     const slicedSlider = props.cards.slice(currentIdx, current);
 
@@ -35,11 +32,10 @@ const Slide = (props) => {
     if (!Array.isArray(props.cards) || props.cards.length <= 0) {
         return null;
     }
-    console.log(props.cards);
 
     return (
         <section className="slider_container">
-            <FaChevronCircleLeft className="left-arrow" onClick={prevSlide} />
+            <FaChevronLeft className="left-arrow" onClick={prevSlide} />
             {slicedSlider.map((card, index) => {
                 return (
                     <div key={index} className="cards_container">
@@ -58,7 +54,7 @@ const Slide = (props) => {
                     </div>
                 );
             })}
-            <FaChevronCircleRight className="right-arrow" onClick={nextSlide} />
+            <FaChevronRight className="right-arrow" onClick={nextSlide} />
         </section>
     );
 };

@@ -1,34 +1,46 @@
+.slider_container {
+    display: flex;
+    margin-top: 15px;
+}
+
+.cards_container {
+    width: 90%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .left-arrow,
 .right-arrow {
     width: 68px;
     height: 68px;
-    box-sizing: border-box;
-    /* border: 1,7px solid #f8f8f8; */
-    border: 2px solid red;
-    /* background: #ffffff; */
-    background: rosybrown !important;
-    box-shadow: 0 3.4 17 rgba(0, 0, 0, 0.1);
-    /* ______ */
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    top: 40%;
-    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 50%;
     border: 1.7px solid #F8F8F8;
     box-sizing: border-box;
-    box-shadow: 0px 3.4px 17px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3.4px 17px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    background: #FFFFFF;
     cursor: pointer;
     user-select: none;
     z-index: 10;
-    border-radius: 50%;
-    background-color: rgb(164, 161, 161);
-    opacity: .50;
+    opacity: .40;
 }
 
+.left-arrow:hover,
+.right-arrow:hover {
+    box-shadow: 0px 3.4px 17px rgba(0, 0, 0, 0.5);
+    opacity: .60;
+}
+
+
+
 .left-arrow {
-    left: 25px;
+    left: 100px;
 }
 
 .right-arrow {
-    right: 25px;
+    right: 100px;
 }

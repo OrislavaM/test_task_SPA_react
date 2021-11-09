@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Loader from "react-loader-spinner";
 import Card from "./UI/Card/Card";
+import "../components/UI/Loader/Loader.css";
+import MyLoader from "./UI/Loader/Loader";
 
 function CardList() {
     const [error, setError] = useState(null);
@@ -8,7 +9,7 @@ function CardList() {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-        fetch("https://api.thedogapi.com/v1/breeds?limit=8&page=8")
+        fetch("https://api.thedogapi.com/v1/breeds?limit=8&page=6")
             .then((res) => res.json())
             .then(
                 (result) => {
@@ -26,8 +27,8 @@ function CardList() {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
         return (
-            <div className="loader">
-                <Loader />
+            <div className="my_loader">
+                <MyLoader />
             </div>
         );
     } else {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Loader from "react-loader-spinner";
 import Slide from "./UI/Slider/Slide";
+import "../components/UI/Loader/Loader.css";
+import MyLoader from "./UI/Loader/Loader";
 
 function CardSlider() {
     const [error, setError] = useState(null);
@@ -27,7 +28,7 @@ function CardSlider() {
     } else if (!isLoaded) {
         return (
             <div className="loader">
-                <Loader />
+                <MyLoader />
             </div>
         );
     } else {
