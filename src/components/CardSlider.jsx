@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Loader from "react-loader-spinner";
 import Slide from "./UI/Slider/Slide";
 
 function CardSlider() {
@@ -7,7 +8,7 @@ function CardSlider() {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-        fetch("https://api.thedogapi.com/v1/breeds?limit=8&page=8")
+        fetch("https://api.thedogapi.com/v1/breeds?limit=9&page=7")
             .then((res) => res.json())
             .then(
                 (result) => {
@@ -24,7 +25,11 @@ function CardSlider() {
     if (error) {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
-        return <div>Loaded...</div>;
+        return (
+            <div className="loader">
+                <Loader />
+            </div>
+        );
     } else {
         return <Slide cards={cards} />;
     }

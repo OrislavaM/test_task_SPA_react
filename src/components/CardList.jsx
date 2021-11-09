@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Loader from "react-loader-spinner";
 import Card from "./UI/Card/Card";
 
 function CardList() {
@@ -24,7 +25,11 @@ function CardList() {
     if (error) {
         return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
-        return <div>Loaded...</div>;
+        return (
+            <div className="loader">
+                <Loader />
+            </div>
+        );
     } else {
         return <Card cards={cards} />;
     }

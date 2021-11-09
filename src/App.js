@@ -1,5 +1,4 @@
 import "./Styles/App.css";
-// import React, { useState } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Home from "./Pages/Home";
 import Products from "./Pages/Products";

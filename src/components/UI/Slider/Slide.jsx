@@ -1,33 +1,66 @@
-import React from "react";
-import Slider from "react-slick";
+import React, { useState } from "react";
 import "./Slide.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 
-export default function Slide(props) {
-    const settings = {
-        focusOnSelect: true,
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        speed: 500,
+const Slide = (props) => {
+    const [current, setCurrent] = useState(3);
+    const [currentIdx, setCurrentIdx] = useState(0);
+    const length = props.cards.length;
+
+    console.log(current);
+    console.log(length);
+
+    const slicedSlider = props.cards.slice(currentIdx, current);
+
+    const nextSlide = () => {
+        if (length - 1 > current) {
+            setCurrent(current + 3);
+            setCurrentIdx(currentIdx + 3);
+        } else {
+            setCurrent(3);
+            setCurrentIdx(0);
+        }
     };
+
+    const prevSlide = () => {
+        if (current === 3) {
+            setCurrent(length);
+            setCurrentIdx(length - 3);
+        } else {
+            setCurrent(current - 3);
+            setCurrentIdx(currentIdx - 3);
+        }
+    };
+
+    if (!Array.isArray(props.cards) || props.cards.length <= 0) {
+        return null;
+    }
+    console.log(props.cards);
+
     return (
-        <Slider {...settings}>
-            {props.cards.map((card) => {
+        <section className="slider_container">
+            <FaChevronCircleLeft className="left-arrow" onClick={prevSlide} />
+            {slicedSlider.map((card, index) => {
                 return (
-                    <div className="dogs_card">
-                        <img src={card.image.url} alt="dogs"></img>
-                        <div className="dogs_information">
-                            <p className="dogs_name">{card.name}</p>
-                            <p className="dogs_bred">{card.bred_for}</p>
-                            <p className="dogs_temperament">
-                                {card.temperament}
-                            </p>
-                        </div>
+                    <div key={index} className="cards_container">
+                        {
+                            <div className="dogs_card">
+                                <img src={card.image.url} alt="dogs"></img>
+                                <div className="dogs_information">
+                                    <p className="dogs_name">{card.name}</p>
+                                    <p className="dogs_bred">{card.bred_for}</p>
+                                    <p className="dogs_temperament">
+                                        {card.temperament}
+                                    </p>
+                                </div>
+                            </div>
+                        }
                     </div>
                 );
             })}
-        </Slider>
+            <FaChevronCircleRight className="right-arrow" onClick={nextSlide} />
+        </section>
     );
-}
+};
+
+export default Slide;
