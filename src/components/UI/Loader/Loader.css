@@ -1,8 +1,7 @@
 .loader,
 .my_loader {
-    margin-top: 100px;
-}
-
-.loader {
-    margin-left: 50px;
+    display: block;
+    position: absolute;
+    bottom: 50%;
+    left: 45%;
 }
