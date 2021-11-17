@@ -5,7 +5,7 @@ import "../Styles/Products.css";
 function Products() {
     return (
         <div className="container">
-            <h3>Product Page</h3>
+            <h3 className="product_header">Product Page</h3>
             <div className="products">
                 <CardList />
             </div>

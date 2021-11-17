@@ -35,26 +35,42 @@ const Slide = (props) => {
 
     return (
         <section className="slider_container">
-            <FaChevronLeft className="left-arrow" onClick={prevSlide} />
-            {slicedSlider.map((card, index) => {
-                return (
-                    <div key={index} className="cards_container">
-                        {
-                            <div className="dogs_card">
-                                <img src={card.image.url} alt="dogs"></img>
-                                <div className="dogs_information">
-                                    <p className="dogs_name">{card.name}</p>
-                                    <p className="dogs_bred">{card.bred_for}</p>
-                                    <p className="dogs_temperament">
-                                        {card.temperament}
-                                    </p>
-                                </div>
+            <h3 className='home_header'>Home Page</h3>
+            <div className="slider">
+                <div className="left_arrow" onClick={prevSlide}>
+                    <FaChevronLeft />
+                </div>
+                <div className="slider_wrapper">
+                    {slicedSlider.map((card, index) => {
+                        return (
+                            <div key={index} className="cards_container">
+                                {
+                                    <div className="dogs_card">
+                                        <img
+                                            src={card.image.url}
+                                            alt="dogs"
+                                        ></img>
+                                        <div className="dogs_information">
+                                            <p className="dogs_name">
+                                                {card.name}
+                                            </p>
+                                            <p className="dogs_bred">
+                                                {card.bred_for}
+                                            </p>
+                                            <p className="dogs_temperament">
+                                                {card.temperament}
+                                            </p>
+                                        </div>
+                                    </div>
+                                }
                             </div>
-                        }
-                    </div>
-                );
-            })}
-            <FaChevronRight className="right-arrow" onClick={nextSlide} />
+                        );
+                    })}
+                </div>
+                <div className="right_arrow" onClick={nextSlide}>
+                    <FaChevronRight />
+                </div>
+            </div>
         </section>
     );
 };

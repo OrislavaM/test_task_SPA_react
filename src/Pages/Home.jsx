@@ -4,7 +4,6 @@ import CardSlider from "../components/CardSlider";
 function Home() {
     return (
         <div className="home_container">
-            <h3>Home Page</h3>
             <CardSlider />
         </div>
     );
